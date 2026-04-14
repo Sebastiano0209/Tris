@@ -76,6 +76,7 @@ function Verifica_vittoria_o(controllo_o)
 let tasto=document.querySelectorAll(".bottone");
 let vis_x=document.querySelectorAll(".visualizzazione_x");
 let vis_o=document.querySelectorAll(".visualizzazione_o");
+let vt = document.getElementById("vittoria");
 let cont=0;
 let vittoria_x=false;
 let vittoria_o=false;
@@ -106,6 +107,7 @@ for(let i=0;i<tasto.length;i++)
                 controllo_x[i]="x";
                 if(Verifica_vittoria_x(controllo_x)==1)
                 {
+                    vt.textContent="vittoria x";
                     vittoria_x=true;
                 }
         }
@@ -116,6 +118,7 @@ for(let i=0;i<tasto.length;i++)
                 controllo_o[i] = "o"; 
                 if(Verifica_vittoria_o(controllo_o)==2)
                 {
+                    vt.textContent="vittoria o";
                     vittoria_o=true;
                 } 
         }
