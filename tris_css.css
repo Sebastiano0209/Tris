@@ -12,3 +12,16 @@ section{
 .cella{
     border: 2px solid black;
 }
+button{
+    height:100px;
+    width:100px;
+    background-color: white;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+p{
+    font-size: 160px;
+    padding-bottom: 20px;
+}
