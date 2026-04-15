@@ -1,3 +1,5 @@
+// funzioni schermo condiviso
+
 function Verifica_vittoria_x(controllo_x)
 {
     if(controllo_x[0]=="x" && controllo_x[1]=="x" && controllo_x[2]=="x")
@@ -73,6 +75,29 @@ function Verifica_vittoria_o(controllo_o)
 
 
 
+
+
+
+
+
+// menù
+
+let menù=document.getElementById("menù");
+let gioco_1=document.getElementById("gioco1");
+let scelta_1=document.getElementById("scelta1");
+let scelta_2=document.getElementById("scelta2");
+
+scelta_1.addEventListener("click",function(){
+    menù.style.display = "none";
+    gioco_1.style.display = "block";
+});
+scelta_2.addEventListener("click",function(){
+    menù.style.display = "none";
+    gioco_1.style.display = "block";
+});
+
+// schermo condiviso
+
 let tasto=document.querySelectorAll(".bottone");
 let vis_x=document.querySelectorAll(".visualizzazione_x");
 let vis_o=document.querySelectorAll(".visualizzazione_o");
@@ -88,6 +113,7 @@ let controllo_o=["","","",
                 "","","",
                 "","",""
                 ];
+
 
 for(let i=0;i<tasto.length;i++)
 {

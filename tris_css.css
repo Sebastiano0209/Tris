@@ -1,5 +1,27 @@
-section{
-    display:flex;
+/* menù    */
+
+#menù{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#scelta1{
+    height: 50px;
+    width: 100px;
+    background-color: aquamarine;
+    margin-top: 50px;
+}
+#scelta2{
+    height: 50px;
+    width: 100px;
+    background-color: aquamarine;
+    margin-top: 50px;
+}
+/* gioco schermo condiviso*/
+
+.sect{
+    display: flex;
     margin-top: 30px;
     justify-content: center;
  }
