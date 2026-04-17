@@ -87,10 +87,12 @@ let gioco_1=document.getElementById("gioco1");
 let gioco_2=document.getElementById("gioco2");
 let scelta_1=document.getElementById("scelta1");
 let scelta_2=document.getElementById("scelta2");
+let titolo_sc=document.getElementById("titolo_sc");
 
 scelta_1.addEventListener("click",function(){
     menù.style.display = "none";
     gioco_1.style.display = "block";
+    titolo_sc.style.display = "block";
     
     // ------------------------------------------------------------------------------------
     // schermo condiviso
