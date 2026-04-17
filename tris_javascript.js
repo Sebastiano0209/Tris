@@ -93,11 +93,18 @@ scelta_1.addEventListener("click",function(){
     menù.style.display = "none";
     gioco_1.style.display = "block";
     titolo_sc.style.display = "block";
+    
 
     // ------------------------------------------------------------------------------------
     // schermo condiviso
 
     let h1_sc=document.querySelectorAll(".h1_sc");
+    let sect2_1_sc=document.querySelectorAll(".sect2_1_sc")[0];
+    let sect2_2_sc=document.querySelectorAll(".sect2_2_sc")[0];
+    let sect2_3_sc=document.querySelectorAll(".sect2_3_sc")[0];
+    let cont_sect2_1_sc=0;
+    let cont_sect2_2_sc=0;
+    let cont_sect2_3_sc=0;
 
     let tasto=document.querySelectorAll(".bottone");
     let vis_x=document.querySelectorAll(".visualizzazione_x");
@@ -114,7 +121,8 @@ scelta_1.addEventListener("click",function(){
                     "","","",
                     "","",""
                     ];
-
+    
+    let home= document.getElementById("home");
 
     for(let i=0;i<tasto.length;i++)
     {
@@ -137,19 +145,23 @@ scelta_1.addEventListener("click",function(){
                 {
                     vt.textContent="vittoria x";
                     vittoria_x=true;
+                    cont_sect2_1_sc++;
+                    sect2_1_sc.textContent="Giocatore 1(X):"+ cont_sect2_1_sc;
                 }
             }
             else
             {
-                    vis_o[i].textContent="o";
-                    vis_o[i].style.color="red";
-                    tasto[i].disabled = true;
-                    controllo_o[i] = "o"; 
-                    if(Verifica_vittoria_o(controllo_o)==2)
-                    {
-                        vt.textContent="vittoria o";
-                        vittoria_o=true;
-                    } 
+                vis_o[i].textContent="o";
+                vis_o[i].style.color="red";
+                tasto[i].disabled = true;
+                controllo_o[i] = "o"; 
+                if(Verifica_vittoria_o(controllo_o)==2)
+                {
+                    vt.textContent="vittoria o";
+                    vittoria_o=true;
+                    cont_sect2_3_sc++;
+                    sect2_3_sc.textContent="Giocatore 2(O):"+ cont_sect2_3_sc;
+                } 
             }
             cont++;    
             if(cont % 2 === 0){
@@ -161,8 +173,26 @@ scelta_1.addEventListener("click",function(){
                 h1_sc[0].textContent = "Turno O";
                 h1_sc[0].style.color="red";
             }
+            if(tasto[0].disabled === true && tasto[1].disabled === true && tasto[2].disabled === true && tasto[3].disabled === true && tasto[4].disabled === true && tasto[5].disabled === true && tasto[6].disabled === true && tasto[7].disabled === true && tasto[8].disabled === true)
+            {
+                cont_sect2_2_sc++;
+                sect2_2_sc.textContent="Pareggi:"+ cont_sect2_2_sc;
+                if(vittoria_x!=true)
+                {
+                    return;
+                }  
+                if(vittoria_o!=true)
+                {
+                    return;
+                }
+            }
         });
     }
+    home.addEventListener("click",function(){
+        gioco_1.style.display = "none";
+        titolo_sc.style.display = "none";
+        menù.style.display = "block";
+    });
 });
 scelta_2.addEventListener("click",function(){
     menù.style.display = "none";

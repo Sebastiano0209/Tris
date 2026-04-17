@@ -104,8 +104,10 @@ h2{
 }
 .sect1_sc{
     display: flex;
-    justify-content: space-evenly;
     margin-top: 90px;
+    justify-content: center; 
+    gap: 20px;
+    font-size: 20px;
 }
 
 .sect{
@@ -155,4 +157,36 @@ p{
     font-size: 160px;
     padding-bottom: 20px;
     color: black;
+}
+.sect3_sc{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 35px;
+}
+#reset{
+    height: 60px;
+    width: 130px;
+    border-radius: 20px;
+    background-color: rgb(8, 230, 37);
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid transparent;
+    transition: transform 1s;
+}
+#reset:hover{
+    transform: translateY(-5px);
+}
+#home{
+    height: 60px;
+    width: 130px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid transparent;
+    transition: transform 1s;
+}
+#home:hover{
+    transform: scale(1.05);
 }
