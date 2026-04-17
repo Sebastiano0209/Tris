@@ -93,9 +93,11 @@ scelta_1.addEventListener("click",function(){
     menù.style.display = "none";
     gioco_1.style.display = "block";
     titolo_sc.style.display = "block";
-    
+
     // ------------------------------------------------------------------------------------
     // schermo condiviso
+
+    let h1_sc=document.querySelectorAll(".h1_sc");
 
     let tasto=document.querySelectorAll(".bottone");
     let vis_x=document.querySelectorAll(".visualizzazione_x");
@@ -127,18 +129,20 @@ scelta_1.addEventListener("click",function(){
             }
             if(cont %2===0)
             {
-                    vis_x[i].textContent="x";
-                    tasto[i].disabled = true; 
-                    controllo_x[i]="x";
-                    if(Verifica_vittoria_x(controllo_x)==1)
-                    {
-                        vt.textContent="vittoria x";
-                        vittoria_x=true;
-                    }
+                vis_x[i].textContent="x";
+                vis_x[i].style.color="blue";
+                tasto[i].disabled = true; 
+                controllo_x[i]="x";
+                if(Verifica_vittoria_x(controllo_x)==1)
+                {
+                    vt.textContent="vittoria x";
+                    vittoria_x=true;
+                }
             }
             else
             {
                     vis_o[i].textContent="o";
+                    vis_o[i].style.color="red";
                     tasto[i].disabled = true;
                     controllo_o[i] = "o"; 
                     if(Verifica_vittoria_o(controllo_o)==2)
@@ -148,6 +152,15 @@ scelta_1.addEventListener("click",function(){
                     } 
             }
             cont++;    
+            if(cont % 2 === 0){
+                h1_sc[0].textContent = "Turno X";
+                h1_sc[0].style.color="blue";
+            }           
+            else 
+            {
+                h1_sc[0].textContent = "Turno O";
+                h1_sc[0].style.color="red";
+            }
         });
     }
 });
