@@ -194,3 +194,74 @@ p{
     padding: 0;
     margin: 0;
 }
+
+/* -------------------------------------------------------------------------------------------*/
+/* gioco contro il computer*/
+
+.h1_gc{
+    text-align: center;
+    font-size: 60px;
+    border-radius: 20px;
+    background-color: rgb(1, 255, 208);
+    margin: 20px 550px;
+    color: blue;
+}
+.sect1_gc{
+    display: flex;
+    margin-top: 90px;
+    justify-content: center; 
+    gap: 20px;
+    font-size: 20px;
+}
+.sect3_gc{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 35px;
+}
+#reset_gc{
+    height: 60px;
+    width: 130px;
+    border-radius: 20px;
+    background-color: rgb(8, 230, 37);
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid transparent;
+    transition: transform 1s;
+}
+#reset_gc:hover{
+    transform: scale(1.05);
+}
+#home_gc{
+    height: 60px;
+    width: 130px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid transparent;
+    transition: transform 1s;
+}
+#home_gc:hover{
+    transform: scale(1.05);
+}
+
+/*
+.sect2_1_sc,
+.sect2_2_sc,
+.sect2_3_sc {
+    font-size: 20px;
+    color: black;
+    display: inline-block;
+    min-width: 150px;
+    text-align: center;
+}
+.sect2_1_gc,
+.sect2_2_gc,
+.sect2_3_gc {
+    font-size: 20px;
+    color: black;
+    display: inline-block;
+    min-width: 150px;
+    text-align: center;
+}*/
