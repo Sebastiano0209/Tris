@@ -175,7 +175,7 @@ p{
     transition: transform 1s;
 }
 #reset:hover{
-    transform: translateY(-5px);
+    transform: scale(1.05);
 }
 #home{
     height: 60px;
@@ -189,4 +189,8 @@ p{
 }
 #home:hover{
     transform: scale(1.05);
+}
+.bottone {
+    padding: 0;
+    margin: 0;
 }
