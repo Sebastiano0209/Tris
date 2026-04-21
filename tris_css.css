@@ -47,8 +47,8 @@ h2{
     border: 2px solid transparent;
 }
 .col2:hover{
-    border: 2px solid blue;
-    box-shadow: 0px 0px 50px blue;
+    border: 2px solid #1a0ce8;
+    box-shadow: 0px 0px 50px #1a0ce8;
     transform: scale(1.05);
 }
 .sect3{
@@ -98,9 +98,9 @@ h2{
     text-align: center;
     font-size: 60px;
     border-radius: 20px;
-    background-color: rgb(1, 255, 208);
+    background-color: #f9f871;
     margin: 20px 550px;
-    color: blue;
+    color: #1a0ce8;
 }
 .sect1_sc{
     display: flex;
@@ -129,8 +129,8 @@ h2{
     border: 2px solid transparent;
 }
 .col2:hover{
-    border: 2px solid blue;
-    box-shadow: 0px 0px 50px blue;
+    border: 2px solid #1a0ce8;
+    box-shadow: 0px 0px 50px #1a0ce8;
     transform: scale(1.05);
 }
 .cella{
@@ -168,7 +168,7 @@ p{
     height: 60px;
     width: 130px;
     border-radius: 20px;
-    background-color: rgb(8, 230, 37);
+    background-color: #ffba38;
     color: white;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     border: 2px solid transparent;
@@ -202,7 +202,7 @@ p{
     text-align: center;
     font-size: 60px;
     border-radius: 20px;
-    background-color: rgb(1, 255, 208);
+    background-color: #f9f871;
     margin: 20px 550px;
     color: blue;
 }
@@ -223,7 +223,7 @@ p{
     height: 60px;
     width: 130px;
     border-radius: 20px;
-    background-color: rgb(8, 230, 37);
+    background-color: #ffba38;
     color: white;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     border: 2px solid transparent;
@@ -245,23 +245,3 @@ p{
 #home_gc:hover{
     transform: scale(1.05);
 }
-
-/*
-.sect2_1_sc,
-.sect2_2_sc,
-.sect2_3_sc {
-    font-size: 20px;
-    color: black;
-    display: inline-block;
-    min-width: 150px;
-    text-align: center;
-}
-.sect2_1_gc,
-.sect2_2_gc,
-.sect2_3_gc {
-    font-size: 20px;
-    color: black;
-    display: inline-block;
-    min-width: 150px;
-    text-align: center;
-}*/
