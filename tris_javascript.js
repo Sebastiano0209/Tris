@@ -1,5 +1,5 @@
 // funzioni schermo condiviso
-function ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,a,b,c)
+function ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x_o,a,b,c)
 {
     tasto[a].style.backgroundColor = "rgb(37, 255, 17)";
     tasto[b].style.backgroundColor = "rgb(37, 255, 17)";
@@ -9,9 +9,9 @@ function ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,a,b,c)
     tasto[b].style.border = "0";
     tasto[c].style.border = "0";
 
-    vis_x[a].style.color = "white";
-    vis_x[b].style.color = "white";
-    vis_x[c].style.color = "white";
+    vis_x_o[a].style.color = "white";
+    vis_x_o[b].style.color = "white";
+    vis_x_o[c].style.color = "white";
 }
 
 function Verifica_vittoria_x(controllo_x,tasto,vis_x)
@@ -59,60 +59,46 @@ function Verifica_vittoria_x(controllo_x,tasto,vis_x)
     return 0;
 }
 //--------------------------------------------------------------------------------------------
-function ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,a,b,c)
-{
-    tasto[a].style.backgroundColor = "rgb(37, 255, 17)";
-    tasto[b].style.backgroundColor = "rgb(37, 255, 17)";
-    tasto[c].style.backgroundColor = "rgb(37, 255, 17)";
-
-    tasto[a].style.border = "0";
-    tasto[b].style.border = "0";
-    tasto[c].style.border = "0";
-
-    vis_o[a].style.color = "white";
-    vis_o[b].style.color = "white";
-    vis_o[c].style.color = "white";
-}
 function Verifica_vittoria_o(controllo_o,tasto,vis_o)
 {
     if(controllo_o[0]=="o" && controllo_o[1]=="o" && controllo_o[2]=="o")
     {
-        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,0,1,2);
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,0,1,2);
         return 2;
     }
     if(controllo_o[0]=="o" && controllo_o[4]=="o" && controllo_o[8]=="o")
     {
-        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,0,4,8);
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,0,4,8);
         return 2;
     }
     if(controllo_o[0]=="o" && controllo_o[3]=="o" && controllo_o[6]=="o")
     {
-        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,0,3,6);
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,0,3,6);
         return 2;
     }
     if(controllo_o[3]=="o" && controllo_o[4]=="o" && controllo_o[5]=="o")
     {
-        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,3,4,5);
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,3,4,5);
         return 2;
     }
     if(controllo_o[6]=="o" && controllo_o[7]=="o" && controllo_o[8]=="o")
     {
-        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,6,7,8);
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,6,7,8);
         return 2;
     }
     if(controllo_o[1]=="o" && controllo_o[4]=="o" && controllo_o[7]=="o")
     {
-        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,1,4,7);
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,1,4,7);
         return 2;
     }
     if(controllo_o[2]=="o" && controllo_o[5]=="o" && controllo_o[8]=="o")
     {
-        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,2,5,8);
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,2,5,8);
         return 2;
     }
     if(controllo_o[2]=="o" && controllo_o[4]=="o" && controllo_o[6]=="o")
     {
-        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,2,4,6);
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,2,4,6);
         return 2;
     }
     return 0;
@@ -121,12 +107,13 @@ function Verifica_vittoria_o(controllo_o,tasto,vis_o)
 //-------------------------------------------------------------------------------------------------------------
 //funzione Minimax
 
-function ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,m)
+function ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,m,controllocasuale)
 {
     vis_o_cpu[m].textContent="o";
     vis_o_cpu[m].style.color="red";
     tasto_cpu[m].disabled = true;
     controllo_o_cpu[m] = "o"; 
+    controllocasuale[m] = 1;
 }
 function Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,controllo_x_cpu,controllocasuale,ncasuale,n)
 {
@@ -142,19 +129,19 @@ function Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,controllo_x_cpu,controlloca
         let [a,b,c]= posizione;
         if(controllo_o_cpu[a]=="o" && controllo_o_cpu[b]=="o" && controllo_o_cpu[c]==""  &&  tasto_cpu[c].disabled == false)
         {
-            ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,c);
+            ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,c,controllocasuale);
             //mossafatta=1;
             return;
         }
-        if(controllo_o_cpu[a]=="o" && controllo_o_cpu[c]=="o" && controllo_o_cpu[b]=="" &&  tasto_cpu[c].disabled == false)
+        if(controllo_o_cpu[a]=="o" && controllo_o_cpu[c]=="o" && controllo_o_cpu[b]=="" &&  tasto_cpu[b].disabled == false)
         {
-            ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,b);
+            ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,b,controllocasuale);
             //mossafatta=1;
             return;
         }
-        if(controllo_o_cpu[b]=="o" && controllo_o_cpu[c]=="o" && controllo_o_cpu[a]=="" &&  tasto_cpu[c].disabled == false)
+        if(controllo_o_cpu[b]=="o" && controllo_o_cpu[c]=="o" && controllo_o_cpu[a]=="" &&  tasto_cpu[a].disabled == false)
         {
-            ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,a);
+            ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,a,controllocasuale);
             //mossafatta=1; 
             return;
         }
@@ -164,21 +151,21 @@ function Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,controllo_x_cpu,controlloca
         for (let posizione of PosizioniVincenti) {
             let [a, b, c] = posizione;
 
-            if (controllo_x_cpu[a]=="x" && controllo_x_cpu[b]=="x" && controllo_o_cpu[c]=="") 
+            if (controllo_x_cpu[a]=="x" && controllo_x_cpu[b]=="x" && controllo_o_cpu[c]=="" && controllo_x_cpu[c]=="") 
             { 
-                ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,c);
+                ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,c,controllocasuale);
                 //mossafatta=1; 
                 return;
             }
-            if (controllo_x_cpu[a]=="x" && controllo_x_cpu[c]=="x" && controllo_o_cpu[b]=="") 
+            if (controllo_x_cpu[a]=="x" && controllo_x_cpu[c]=="x" && controllo_o_cpu[b]=="" && controllo_x_cpu[b]=="") 
             {  
-                ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,b);
+                ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,b,controllocasuale);
                 mossafatta=1; 
                 return;
             }
-            if (controllo_x_cpu[b]=="x" && controllo_x_cpu[c]=="x" && controllo_o_cpu[a]=="") 
+            if (controllo_x_cpu[b]=="x" && controllo_x_cpu[c]=="x" && controllo_o_cpu[a]=="" && controllo_x_cpu[a]=="") 
             { 
-                ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,a);
+                ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,a,controllocasuale);
                 //mossafatta=1; 
                 return;
             }
@@ -194,11 +181,35 @@ function Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,controllo_x_cpu,controlloca
                 n=1;
             }
         }while(n==1);
-        ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,ncasuale);
+        ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,ncasuale,controllocasuale);
         controllocasuale[ncasuale]=1;
     }
 }
+//-------------------------------------------------------------------------------------
+function Inserimento_x(vis_x,tasto,controllo_x,i)
+{
+    vis_x[i].textContent="x";
+    vis_x[i].style.color="blue";
+    tasto[i].disabled = true; 
+    controllo_x[i]="x";
+}
+function Vittoria_x(contatore, h1_sc, sect2_1_sc) 
+{
+    contatore++;
+    h1_sc[0].textContent = "Vittoria X";
+    h1_sc[0].style.color = "blue";
+    sect2_1_sc.textContent = "Giocatore 1(X): " + contatore;
+    return contatore;
+}
 
+function Vittoria_o(contatore, h1_sc, sect2_3_sc) 
+{
+    contatore++;
+    h1_sc[0].textContent = "Vittoria O";
+    h1_sc[0].style.color = "red";
+    sect2_3_sc.textContent = "Giocatore 2(O): " + contatore;
+    return contatore;
+}
 // ------------------------------------------------------------------------------------
 // menù
 
@@ -295,18 +306,17 @@ scelta_1.addEventListener("click",function(){
             }
             if(cont %2===0)
             {
-                vis_x[i].textContent="x";
-                vis_x[i].style.color="blue";
-                tasto[i].disabled = true; 
-                controllo_x[i]="x";
-                if(Verifica_vittoria_x(controllo_x,tasto,vis_x)==1)
+                Inserimento_x(vis_x,tasto,controllo_x,i);
+    
+                if(Verifica_vittoria_x(controllo_x, tasto, vis_x) == 1) {
+                    cont_sect2_1_sc = Vittoria_x(cont_sect2_1_sc, h1_sc, sect2_1_sc);
+                    vittoria_x = true;
+                    n = 1;
+                }
+                else 
                 {
-                    vittoria_x=true;
-                    cont_sect2_1_sc++;
-                    h1_sc[0].textContent = "Vittoria X";
-                    h1_sc[0].style.color="blue";
-                    sect2_1_sc.textContent="Giocatore 1(X): "+ cont_sect2_1_sc;
-                    n=1;
+                    h1_sc[0].textContent = "Turno O";
+                    h1_sc[0].style.color = "red";
                 }
             }
             else
@@ -315,15 +325,16 @@ scelta_1.addEventListener("click",function(){
                 vis_o[i].style.color="red";
                 tasto[i].disabled = true;
                 controllo_o[i] = "o"; 
-                if(Verifica_vittoria_o(controllo_o,tasto,vis_o)==2)
+                if(Verifica_vittoria_o(controllo_o, tasto, vis_o) == 2) {
+                    cont_sect2_3_sc = Vittoria_o(cont_sect2_3_sc, h1_sc, sect2_3_sc);
+                    vittoria_o = true; 
+                    n = 1;
+                }
+                else 
                 {
-                    vittoria_o=true;
-                    cont_sect2_3_sc++;
-                    h1_sc[0].textContent = "Vittoria O";
-                    h1_sc[0].style.color="red";
-                    sect2_3_sc.textContent="Giocatore 2(O):"+ cont_sect2_3_sc;
-                    n=1;
-                } 
+                    h1_sc[0].textContent = "Turno X";
+                    h1_sc[0].style.color = "blue";
+                }
             }
             cont++;    
             if(n==0)
@@ -440,21 +451,18 @@ scelta_2.addEventListener("click",function(){
             {
                 return;
             }
-            vis_x_cpu[i].textContent="x";
-            vis_x_cpu[i].style.color="blue";
-            tasto_cpu[i].disabled = true;
+            Inserimento_x(vis_x_cpu,tasto_cpu,controllo_x_cpu,i);
+
             controllocasuale[i]=1; 
-            controllo_x_cpu[i]="x";
             if(Verifica_vittoria_x(controllo_x_cpu,tasto_cpu,vis_x_cpu)==1)
             {
-                vittoria_x_cpu=true;
-                cont_sect2_1_gc++;
-                h1_gc[0].textContent="Vittoria X";
-                h1_gc[0].style.color="blue";
-                sect2_1_gc.textContent="Giocatore 1(X): "+ cont_sect2_1_gc;
+                cont_sect2_1_gc = Vittoria_x(cont_sect2_1_gc, h1_gc, sect2_1_gc);
+                vittoria_x_cpu = true;
                 n_cpu++;
                 return;
             }
+            h1_gc[0].textContent = "Turno O";
+            h1_gc[0].style.color = "red";
 
             let caselle_occupate = 0;
             for (let j = 0; j < 9; j++) {
@@ -471,40 +479,24 @@ scelta_2.addEventListener("click",function(){
                 return;
             }
 
-            /*do{
-                n=0;
-                ncasuale=Math.floor(Math.random()*9);
-                if(controllocasuale[ncasuale]!=0)
-                {
-                    n=1;
-                }
-            }while(n==1);
-            vis_o_cpu[ncasuale].textContent="o";
-            vis_o_cpu[ncasuale].style.color="red";
-            tasto_cpu[ncasuale].disabled = true;
-            controllo_o_cpu[ncasuale] = "o"; 
-            controllocasuale[ncasuale]=1;*/
-
-
             Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,controllo_x_cpu,controllocasuale,ncasuale,n);
 
-            if(Verifica_vittoria_o(controllo_o_cpu,tasto_cpu,vis_o_cpu)==2)
+            if(Verifica_vittoria_o(controllo_o_cpu, tasto_cpu, vis_o_cpu) == 2) 
             {
-                vittoria_o_cpu=true;
-                cont_sect2_3_gc++;
-                h1_gc[0].textContent="Vittoria O";
-                h1_gc[0].style.color="red";
-                sect2_3_gc.textContent="Giocatore 2(O):"+ cont_sect2_3_gc;
+                cont_sect2_3_gc = Vittoria_o(cont_sect2_3_gc, h1_gc, sect2_3_gc);
+                vittoria_o_cpu = true; 
                 n_cpu++;
                 return;
             }
+            h1_gc[0].textContent = "Turno X";
+            h1_gc[0].style.color = "blue";
             if(
                 tasto_cpu[0].disabled && tasto_cpu[1].disabled && tasto_cpu[2].disabled &&
                 tasto_cpu[3].disabled && tasto_cpu[4].disabled && tasto_cpu[5].disabled &&
                 tasto_cpu[6].disabled && tasto_cpu[7].disabled && tasto_cpu[8].disabled
             )
             {
-                if(!vittoria_x_cpu && !vittoria_o_cpu)
+                if (vittoria_x_cpu == false && vittoria_o_cpu == false)
                 {
                     h1_gc[0].textContent = "Pareggio";
                     h1_gc[0].style.color = "black";
