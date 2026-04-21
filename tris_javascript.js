@@ -1,254 +1,202 @@
 // funzioni schermo condiviso
+function ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,a,b,c)
+{
+    tasto[a].style.backgroundColor = "rgb(37, 255, 17)";
+    tasto[b].style.backgroundColor = "rgb(37, 255, 17)";
+    tasto[c].style.backgroundColor = "rgb(37, 255, 17)";
+
+    tasto[a].style.border = "0";
+    tasto[b].style.border = "0";
+    tasto[c].style.border = "0";
+
+    vis_x[a].style.color = "white";
+    vis_x[b].style.color = "white";
+    vis_x[c].style.color = "white";
+}
 
 function Verifica_vittoria_x(controllo_x,tasto,vis_x)
 {
     if(controllo_x[0]=="x" && controllo_x[1]=="x" && controllo_x[2]=="x")
     {
-        tasto[0].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[1].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[2].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[0].style.border = "0";
-        tasto[1].style.border = "0";
-        tasto[2].style.border = "0";
-
-        vis_x[0].style.color = "white";
-        vis_x[1].style.color = "white";
-        vis_x[2].style.color = "white";
-
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,0,1,2);
         return 1;
     }
     if(controllo_x[0]=="x" && controllo_x[4]=="x" && controllo_x[8]=="x")
     {
-        tasto[0].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[4].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[8].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[0].style.border = "0";
-        tasto[4].style.border = "0";
-        tasto[8].style.border = "0";
-
-        vis_x[0].style.color = "white";
-        vis_x[4].style.color = "white";
-        vis_x[8].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,0,4,8);
         return 1;   
     }
     if(controllo_x[0]=="x" && controllo_x[3]=="x" && controllo_x[6]=="x")
     {
-        tasto[0].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[3].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[6].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[0].style.border = "0";
-        tasto[3].style.border = "0";
-        tasto[6].style.border = "0";
-
-        vis_x[0].style.color = "white";
-        vis_x[3].style.color = "white";
-        vis_x[6].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,0,3,6);
         return 1;
     }
     if(controllo_x[3]=="x" && controllo_x[4]=="x" && controllo_x[5]=="x")
     {
-        tasto[3].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[4].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[5].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[3].style.border = "0";
-        tasto[4].style.border = "0";
-        tasto[5].style.border = "0";
-
-        vis_x[3].style.color = "white";
-        vis_x[4].style.color = "white";
-        vis_x[5].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,3,4,5);
         return 1;
     }
     if(controllo_x[6]=="x" && controllo_x[7]=="x" && controllo_x[8]=="x")
     {
-        tasto[6].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[7].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[8].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[6].style.border = "0";
-        tasto[7].style.border = "0";
-        tasto[8].style.border = "0";
-
-        vis_x[6].style.color = "white";
-        vis_x[7].style.color = "white";
-        vis_x[8].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,6,7,8);
         return 1;
     }
     if(controllo_x[1]=="x" && controllo_x[4]=="x" && controllo_x[7]=="x")
     {
-        tasto[1].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[4].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[7].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[1].style.border = "0";
-        tasto[4].style.border = "0";
-        tasto[7].style.border = "0";
-
-        vis_x[1].style.color = "white";
-        vis_x[4].style.color = "white";
-        vis_x[7].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,1,4,7);
         return 1;
     }
     if(controllo_x[2]=="x" && controllo_x[5]=="x" && controllo_x[8]=="x")
     {
-        tasto[2].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[5].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[8].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[2].style.border = "0";
-        tasto[5].style.border = "0";
-        tasto[8].style.border = "0";
-
-        vis_x[2].style.color = "white";
-        vis_x[5].style.color = "white";
-        vis_x[8].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,2,5,8);
         return 1;
     }
     if(controllo_x[2]=="x" && controllo_x[4]=="x" && controllo_x[6]=="x")
     {
-        tasto[2].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[4].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[6].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[2].style.border = "0";
-        tasto[4].style.border = "0";
-        tasto[6].style.border = "0";
-
-        vis_x[2].style.color = "white";
-        vis_x[4].style.color = "white";
-        vis_x[6].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,2,4,6);
         return 1;
     }
     return 0;
 }
+//--------------------------------------------------------------------------------------------
+function ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,a,b,c)
+{
+    tasto[a].style.backgroundColor = "rgb(37, 255, 17)";
+    tasto[b].style.backgroundColor = "rgb(37, 255, 17)";
+    tasto[c].style.backgroundColor = "rgb(37, 255, 17)";
 
+    tasto[a].style.border = "0";
+    tasto[b].style.border = "0";
+    tasto[c].style.border = "0";
+
+    vis_o[a].style.color = "white";
+    vis_o[b].style.color = "white";
+    vis_o[c].style.color = "white";
+}
 function Verifica_vittoria_o(controllo_o,tasto,vis_o)
 {
     if(controllo_o[0]=="o" && controllo_o[1]=="o" && controllo_o[2]=="o")
     {
-        tasto[0].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[1].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[2].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[0].style.border = "0";
-        tasto[1].style.border = "0";
-        tasto[2].style.border = "0";
-
-        vis_o[0].style.color = "white";
-        vis_o[1].style.color = "white";
-        vis_o[2].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,0,1,2);
         return 2;
     }
     if(controllo_o[0]=="o" && controllo_o[4]=="o" && controllo_o[8]=="o")
     {
-        tasto[0].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[4].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[8].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[0].style.border = "0";
-        tasto[4].style.border = "0";
-        tasto[8].style.border = "0";
-
-        vis_o[0].style.color = "white";
-        vis_o[4].style.color = "white";
-        vis_o[8].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,0,4,8);
         return 2;
     }
     if(controllo_o[0]=="o" && controllo_o[3]=="o" && controllo_o[6]=="o")
     {
-        tasto[0].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[3].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[6].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[0].style.border = "0";
-        tasto[3].style.border = "0";
-        tasto[6].style.border = "0";
-
-        vis_o[0].style.color = "white";
-        vis_o[3].style.color = "white";
-        vis_o[6].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,0,3,6);
         return 2;
     }
     if(controllo_o[3]=="o" && controllo_o[4]=="o" && controllo_o[5]=="o")
     {
-        tasto[3].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[4].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[5].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[3].style.border = "0";
-        tasto[4].style.border = "0";
-        tasto[5].style.border = "0";
-
-        vis_o[3].style.color = "white";
-        vis_o[4].style.color = "white";
-        vis_o[5].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,3,4,5);
         return 2;
     }
     if(controllo_o[6]=="o" && controllo_o[7]=="o" && controllo_o[8]=="o")
     {
-        tasto[6].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[7].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[8].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[6].style.border = "0";
-        tasto[7].style.border = "0";
-        tasto[8].style.border = "0";
-
-        vis_o[6].style.color = "white";
-        vis_o[7].style.color = "white";
-        vis_o[8].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,6,7,8);
         return 2;
     }
     if(controllo_o[1]=="o" && controllo_o[4]=="o" && controllo_o[7]=="o")
     {
-        tasto[1].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[4].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[7].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[1].style.border = "0";
-        tasto[4].style.border = "0";
-        tasto[7].style.border = "0";
-
-        vis_o[1].style.color = "white";
-        vis_o[4].style.color = "white";
-        vis_o[7].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,1,4,7);
         return 2;
     }
     if(controllo_o[2]=="o" && controllo_o[5]=="o" && controllo_o[8]=="o")
     {
-        tasto[2].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[5].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[8].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[2].style.border = "0";
-        tasto[5].style.border = "0";
-        tasto[8].style.border = "0";
-
-        vis_o[2].style.color = "white";
-        vis_o[5].style.color = "white";
-        vis_o[8].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,2,5,8);
         return 2;
     }
     if(controllo_o[2]=="o" && controllo_o[4]=="o" && controllo_o[6]=="o")
     {
-        tasto[2].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[4].style.backgroundColor = "rgb(37, 255, 17)";
-        tasto[6].style.backgroundColor = "rgb(37, 255, 17)";
-
-        tasto[2].style.border = "0";
-        tasto[4].style.border = "0";
-        tasto[6].style.border = "0";
-
-        vis_o[2].style.color = "white";
-        vis_o[4].style.color = "white";
-        vis_o[6].style.color = "white";
+        ApplicaFiltro_Verifica_vittoria_o(tasto,vis_o,2,4,6);
         return 2;
     }
     return 0;
+}
+
+//-------------------------------------------------------------------------------------------------------------
+//funzione Minimax
+
+function ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,m)
+{
+    vis_o_cpu[m].textContent="o";
+    vis_o_cpu[m].style.color="red";
+    tasto_cpu[m].disabled = true;
+    controllo_o_cpu[m] = "o"; 
+}
+function Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,controllo_x_cpu,controllocasuale,ncasuale,n)
+{
+    let PosizioniVincenti = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], 
+        [0, 4, 8], [2, 4, 6]             
+    ];
+    let mossafatta=0;
+
+    for(let posizione of PosizioniVincenti)
+    {
+        let [a,b,c]= posizione;
+        if(controllo_o_cpu[a]=="o" && controllo_o_cpu[b]=="o" && controllo_o_cpu[c]==""  &&  tasto_cpu[c].disabled == false)
+        {
+            ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,c);
+            //mossafatta=1;
+            return;
+        }
+        if(controllo_o_cpu[a]=="o" && controllo_o_cpu[c]=="o" && controllo_o_cpu[b]=="" &&  tasto_cpu[c].disabled == false)
+        {
+            ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,b);
+            //mossafatta=1;
+            return;
+        }
+        if(controllo_o_cpu[b]=="o" && controllo_o_cpu[c]=="o" && controllo_o_cpu[a]=="" &&  tasto_cpu[c].disabled == false)
+        {
+            ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,a);
+            //mossafatta=1; 
+            return;
+        }
+    }
+    if (mossafatta==0) 
+    {
+        for (let posizione of PosizioniVincenti) {
+            let [a, b, c] = posizione;
+
+            if (controllo_x_cpu[a]=="x" && controllo_x_cpu[b]=="x" && controllo_o_cpu[c]=="") 
+            { 
+                ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,c);
+                //mossafatta=1; 
+                return;
+            }
+            if (controllo_x_cpu[a]=="x" && controllo_x_cpu[c]=="x" && controllo_o_cpu[b]=="") 
+            {  
+                ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,b);
+                mossafatta=1; 
+                return;
+            }
+            if (controllo_x_cpu[b]=="x" && controllo_x_cpu[c]=="x" && controllo_o_cpu[a]=="") 
+            { 
+                ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,a);
+                //mossafatta=1; 
+                return;
+            }
+        }
+    }
+    if (mossafatta==0) 
+    {
+        do{
+            n=0;
+            ncasuale=Math.floor(Math.random()*9);
+            if(controllocasuale[ncasuale]!=0)
+            {
+                n=1;
+            }
+        }while(n==1);
+        ApplicaFiltro_Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,ncasuale);
+        controllocasuale[ncasuale]=1;
+    }
 }
 
 // ------------------------------------------------------------------------------------
@@ -483,9 +431,8 @@ scelta_2.addEventListener("click",function(){
         h1_gc[0].textContent = "Turno X";
         h1_gc[0].style.color = "blue";
     }
-
-
     //------------------------------------------------------------
+    
     for(let i=0;i<tasto_cpu.length;i++)
     {
         tasto_cpu[i].addEventListener("click",function(){
@@ -524,7 +471,7 @@ scelta_2.addEventListener("click",function(){
                 return;
             }
 
-            do{
+            /*do{
                 n=0;
                 ncasuale=Math.floor(Math.random()*9);
                 if(controllocasuale[ncasuale]!=0)
@@ -536,7 +483,11 @@ scelta_2.addEventListener("click",function(){
             vis_o_cpu[ncasuale].style.color="red";
             tasto_cpu[ncasuale].disabled = true;
             controllo_o_cpu[ncasuale] = "o"; 
-            controllocasuale[ncasuale]=1;
+            controllocasuale[ncasuale]=1;*/
+
+
+            Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,controllo_x_cpu,controllocasuale,ncasuale,n);
+
             if(Verifica_vittoria_o(controllo_o_cpu,tasto_cpu,vis_o_cpu)==2)
             {
                 vittoria_o_cpu=true;
