@@ -102,6 +102,35 @@ h2{
     margin: 20px 550px;
     color: #1a0ce8;
 }
+body {
+    perspective: 800px;
+}
+
+.mostra {
+    animation: uscita 0.6s ease forwards;
+}
+
+@keyframes uscita {
+    0% {
+        transform: translateZ(-300px) scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: translateZ(150px) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translateZ(0) scale(1);
+    }
+}
+.h1_sc, .h1_gc {
+    transform: scale(1); /* stato iniziale */
+    transition: transform 0.4s ease;
+}
+
+.vittoria {
+    transform: scale(1.9); /* ingrandimento */
+}
 .sect1_sc{
     display: flex;
     margin-top: 90px;

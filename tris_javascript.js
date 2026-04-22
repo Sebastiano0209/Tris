@@ -203,6 +203,11 @@ function Vittoria_x(contatore, h1_sc, sect2_1_sc)
     h1_sc[0].textContent = "Vittoria X";
     h1_sc[0].style.color = "blue";
     sect2_1_sc.textContent = "Giocatore 1(X): " + contatore;
+
+    h1_sc[0].classList.remove("mostra");
+    h1_sc[0].classList.remove("vittoria");
+    void h1_sc[0].offsetWidth;
+    h1_sc[0].classList.add("vittoria");
     return contatore;
 }
 
@@ -212,6 +217,11 @@ function Vittoria_o(contatore, h1_sc, sect2_3_sc)
     h1_sc[0].textContent = "Vittoria O";
     h1_sc[0].style.color = "red";
     sect2_3_sc.textContent = "Giocatore 2(O): " + contatore;
+
+    h1_sc[0].classList.remove("mostra");
+    h1_sc[0].classList.remove("vittoria");
+    void h1_sc[0].offsetWidth;
+    h1_sc[0].classList.add("vittoria");
     return contatore;
 }
 // ------------------------------------------------------------------------------------
@@ -268,7 +278,7 @@ scelta_1.addEventListener("click",function(){
         vittoria_x=false;
         vittoria_o=false;
         cont=0;
-
+        h1_sc[0].classList.remove("vittoria");
         for(let j=0;j<9;j++)
         {
             vis_x[j].textContent="";
@@ -331,7 +341,8 @@ scelta_1.addEventListener("click",function(){
                 vis_o[i].style.color="red";
                 tasto[i].disabled = true;
                 controllo_o[i] = "o"; 
-                if(Verifica_vittoria_o(controllo_o, tasto, vis_o,cella) == 2) {
+                if(Verifica_vittoria_o(controllo_o, tasto, vis_o,cella) == 2) 
+                {
                     cont_sect2_3_sc = Vittoria_o(cont_sect2_3_sc, h1_sc, sect2_3_sc);
                     vittoria_o = true; 
                     n = 1;
@@ -420,7 +431,7 @@ scelta_2.addEventListener("click",function(){
 
         n_cpu = 0;
         n = 0;
-
+        h1_gc[0].classList.remove("vittoria");
         for(let j=0; j<9; j++)
         {
             controllocasuale[j] = 0;
@@ -489,7 +500,7 @@ scelta_2.addEventListener("click",function(){
 
             Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,controllo_x_cpu,controllocasuale,ncasuale,n);
 
-            if(Verifica_vittoria_o(controllo_o_cpu, tasto_cpu, vis_o_cpu,cella) == 2) 
+            if(Verifica_vittoria_x(controllo_o_cpu, tasto_cpu, vis_o_cpu,cella) == 2) 
             {
                 cont_sect2_3_gc = Vittoria_o(cont_sect2_3_gc, h1_gc, sect2_3_gc);
                 vittoria_o_cpu = true; 
