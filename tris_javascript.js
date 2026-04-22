@@ -500,7 +500,7 @@ scelta_2.addEventListener("click",function(){
 
             Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,controllo_x_cpu,controllocasuale,ncasuale,n);
 
-            if(Verifica_vittoria_x(controllo_o_cpu, tasto_cpu, vis_o_cpu,cella) == 2) 
+            if(Verifica_vittoria_o(controllo_o_cpu, tasto_cpu, vis_o_cpu,cella) == 2)
             {
                 cont_sect2_3_gc = Vittoria_o(cont_sect2_3_gc, h1_gc, sect2_3_gc);
                 vittoria_o_cpu = true; 
