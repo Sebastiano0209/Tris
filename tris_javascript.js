@@ -17,94 +17,27 @@ function ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x_o,a,b,c,cella)
     vis_x_o[b].style.color = "white";
     vis_x_o[c].style.color = "white";
 }
+function Verifica_vittoria(controllo, tasto, vis, cella, simbolo, valoreRitorno)
+{
+    const win = [
+        [0,1,2],[0,4,8],[0,3,6],
+        [3,4,5],[6,7,8],
+        [1,4,7],[2,5,8],[2,4,6]
+    ];
 
-function Verifica_vittoria_x(controllo_x,tasto,vis_x,cella)
-{
-    if(controllo_x[0]=="x" && controllo_x[1]=="x" && controllo_x[2]=="x")
+    for(let i=0;i<win.length;i++)
     {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,0,1,2,cella);
-        return 1;
+        let a = win[i][0];
+        let b = win[i][1];
+        let c = win[i][2];
+
+        if(controllo[a]==simbolo && controllo[b]==simbolo && controllo[c]==simbolo)
+        {
+            ApplicaFiltro_Verifica_vittoria_x(tasto,vis,a,b,c,cella);
+            return valoreRitorno;
+        }
     }
-    if(controllo_x[0]=="x" && controllo_x[4]=="x" && controllo_x[8]=="x")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,0,4,8,cella);
-        return 1;   
-    }
-    if(controllo_x[0]=="x" && controllo_x[3]=="x" && controllo_x[6]=="x")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,0,3,6,cella);
-        return 1;
-    }
-    if(controllo_x[3]=="x" && controllo_x[4]=="x" && controllo_x[5]=="x")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,3,4,5,cella);
-        return 1;
-    }
-    if(controllo_x[6]=="x" && controllo_x[7]=="x" && controllo_x[8]=="x")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,6,7,8,cella);
-        return 1;
-    }
-    if(controllo_x[1]=="x" && controllo_x[4]=="x" && controllo_x[7]=="x")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,1,4,7,cella);
-        return 1;
-    }
-    if(controllo_x[2]=="x" && controllo_x[5]=="x" && controllo_x[8]=="x")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,2,5,8,cella);
-        return 1;
-    }
-    if(controllo_x[2]=="x" && controllo_x[4]=="x" && controllo_x[6]=="x")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_x,2,4,6,cella);
-        return 1;
-    }
-    return 0;
-}
-//--------------------------------------------------------------------------------------------
-function Verifica_vittoria_o(controllo_o,tasto,vis_o,cella)
-{
-    if(controllo_o[0]=="o" && controllo_o[1]=="o" && controllo_o[2]=="o")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,0,1,2,cella);
-        return 2;
-    }
-    if(controllo_o[0]=="o" && controllo_o[4]=="o" && controllo_o[8]=="o")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,0,4,8,cella);
-        return 2;
-    }
-    if(controllo_o[0]=="o" && controllo_o[3]=="o" && controllo_o[6]=="o")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,0,3,6,cella);
-        return 2;
-    }
-    if(controllo_o[3]=="o" && controllo_o[4]=="o" && controllo_o[5]=="o")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,3,4,5,cella);
-        return 2;
-    }
-    if(controllo_o[6]=="o" && controllo_o[7]=="o" && controllo_o[8]=="o")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,6,7,8,cella);
-        return 2;
-    }
-    if(controllo_o[1]=="o" && controllo_o[4]=="o" && controllo_o[7]=="o")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,1,4,7,cella);
-        return 2;
-    }
-    if(controllo_o[2]=="o" && controllo_o[5]=="o" && controllo_o[8]=="o")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,2,5,8,cella);
-        return 2;
-    }
-    if(controllo_o[2]=="o" && controllo_o[4]=="o" && controllo_o[6]=="o")
-    {
-        ApplicaFiltro_Verifica_vittoria_x(tasto,vis_o,2,4,6,cella);
-        return 2;
-    }
+
     return 0;
 }
 
@@ -235,10 +168,16 @@ let scelta_2=document.getElementById("scelta2");
 let titolo_sc=document.getElementById("titolo_sc");
 let titolo_gc=document.getElementById("titolo_gc");
 
+let Numerocelle_sc=document.getElementById("Numerocelle_sc");
+
 scelta_1.addEventListener("click",function(){
     menù.style.display = "none";
-    gioco_1.style.display = "block";
-    titolo_sc.style.display = "block";
+    Numerocelle_sc.style.display = "block";
+    Numerocelle_sc.addEventListener("click",function(){
+        gioco_1.style.display = "block";
+        titolo_sc.style.display = "block";
+    });
+
     
     // ------------------------------------------------------------------------------------
     // schermo condiviso
@@ -324,7 +263,7 @@ scelta_1.addEventListener("click",function(){
             {
                 Inserimento_x(vis_x,tasto,controllo_x,i);
     
-                if(Verifica_vittoria_x(controllo_x, tasto, vis_x,cella) == 1) {
+                if(Verifica_vittoria(controllo_x, tasto, vis_x, cella, "x", 1) == 1) {
                     cont_sect2_1_sc = Vittoria_x(cont_sect2_1_sc, h1_sc, sect2_1_sc);
                     vittoria_x = true;
                     n = 1;
@@ -341,7 +280,7 @@ scelta_1.addEventListener("click",function(){
                 vis_o[i].style.color="red";
                 tasto[i].disabled = true;
                 controllo_o[i] = "o"; 
-                if(Verifica_vittoria_o(controllo_o, tasto, vis_o,cella) == 2) 
+                if(Verifica_vittoria(controllo_o, tasto, vis_o, cella, "o", 2) == 2) 
                 {
                     cont_sect2_3_sc = Vittoria_o(cont_sect2_3_sc, h1_sc, sect2_3_sc);
                     vittoria_o = true; 
@@ -473,7 +412,7 @@ scelta_2.addEventListener("click",function(){
             Inserimento_x(vis_x_cpu,tasto_cpu,controllo_x_cpu,i);
 
             controllocasuale[i]=1; 
-            if(Verifica_vittoria_x(controllo_x_cpu,tasto_cpu,vis_x_cpu,cella)==1)
+            if(Verifica_vittoria(controllo_x_cpu, tasto_cpu, vis_x_cpu, cella, "x", 1) == 1)
             {
                 cont_sect2_1_gc = Vittoria_x(cont_sect2_1_gc, h1_gc, sect2_1_gc);
                 vittoria_x_cpu = true;
@@ -500,7 +439,7 @@ scelta_2.addEventListener("click",function(){
 
             Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,controllo_x_cpu,controllocasuale,ncasuale,n);
 
-            if(Verifica_vittoria_o(controllo_o_cpu, tasto_cpu, vis_o_cpu,cella) == 2)
+            if(Verifica_vittoria(controllo_o_cpu, tasto_cpu, vis_o_cpu, cella, "o", 2) == 2)
             {
                 cont_sect2_3_gc = Vittoria_o(cont_sect2_3_gc, h1_gc, sect2_3_gc);
                 vittoria_o_cpu = true; 
