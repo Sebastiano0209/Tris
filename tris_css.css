@@ -6,6 +6,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    font-family: Arial, Helvetica, sans-serif
 }
 .sect1{
     display: flex;
@@ -96,8 +97,48 @@ h2{
 
 .sect_num_celle_sc{
     display: flex;
+    justify-content: center;
+    gap: 20px;
 }
-
+.Numerocelle_sc_t{
+    text-align: center;
+    font-size: 60px;
+    border-radius: 20px;
+    background-color: #f9f871;
+    width: 60%;           
+    margin: 20px auto;    
+    padding: 20px;
+}
+.tre_x_tre_sc{
+    height: 110px;
+    width: 180px;
+    border-radius: 20px;
+    background-color: #ffba38;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid transparent;
+    transition: transform 1s;
+    margin-top: 70px;
+    font-size: 30px;
+}
+.tre_x_tre_sc:hover{
+    transform: scale(1.05);
+}
+.quattro_x_quattro_sc{
+    height: 110px;
+    width: 180px;
+    border-radius: 20px;
+    background-color: #ffba38;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid transparent;
+    transition: transform 1s;
+    margin-top: 70px;
+    font-size: 30px;
+}
+.quattro_x_quattro_sc:hover{
+    transform: scale(1.05);
+}
 
 /*------------------------------------------------------------------------*/
 .h1_sc{
@@ -130,12 +171,12 @@ body {
     }
 }
 .h1_sc, .h1_gc {
-    transform: scale(1); /* stato iniziale */
+    transform: scale(1);
     transition: transform 0.4s ease;
 }
 
 .vittoria {
-    transform: scale(1.9); /* ingrandimento */
+    transform: scale(1.9);
 }
 .sect1_sc{
     display: flex;

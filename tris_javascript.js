@@ -157,28 +157,45 @@ function Vittoria_o(contatore, h1_sc, sect2_3_sc)
     h1_sc[0].classList.add("vittoria");
     return contatore;
 }
-// ------------------------------------------------------------------------------------
-// menù
+//-------------------------------------------------------------------------------------
+/*function generazione_celle_tre() 
+{
+    let container = document.getElementById("celle");
 
-let menù=document.getElementById("menù");
-let gioco_1=document.getElementById("gioco1");
-let gioco_2=document.getElementById("gioco2");
-let scelta_1=document.getElementById("scelta1");
-let scelta_2=document.getElementById("scelta2");
-let titolo_sc=document.getElementById("titolo_sc");
-let titolo_gc=document.getElementById("titolo_gc");
+    for (let i = 0; i < 9; i++) 
+    {
+        let cella = document.createElement("div");
+        cella.classList.add("cella");
+        let button=document.createElement("button");
+        button.classList.add("button");
 
-let Numerocelle_sc=document.getElementById("Numerocelle_sc");
+        cella.textContent = "";
+        button.textContent = "";
 
-scelta_1.addEventListener("click",function(){
-    menù.style.display = "none";
-    Numerocelle_sc.style.display = "block";
-    Numerocelle_sc.addEventListener("click",function(){
-        gioco_1.style.display = "block";
-        titolo_sc.style.display = "block";
-    });
+        container.appendChild(cella);
+        cella.appendChild(button);
+    }   
+}
+function generazione_celle_quattro() 
+{
+    let container = document.getElementById("celle");
 
-    
+    for (let i = 0; i < 16; i++) 
+    {
+        let cella = document.createElement("div");
+        cella.classList.add("cella");
+        let button=document.createElement("button");
+        button.classList.add("button");
+
+        cella.textContent = "";
+        button.textContent = "";
+
+        container.appendChild(cella);
+        cella.appendChild(button);
+    }   
+}*/
+/*function gioco_xtre()
+{
     // ------------------------------------------------------------------------------------
     // schermo condiviso
 
@@ -320,7 +337,356 @@ scelta_1.addEventListener("click",function(){
         titolo_sc.style.display = "none";
         menù.style.display = "block";
     });
+}*/
+/*---------------------------------------------------------------------------------*/
+function generazione_celle(lati,g) 
+{
+    lati=lati*lati;
+    let container = document.getElementById("celle");
+    container.innerHTML = "";
+
+    for (let i = 0; i < lati; i++) 
+    {
+        let cella = document.createElement("div");
+        cella.classList.add("cella");
+        let button=document.createElement("button");
+        button.classList.add("bottone");
+
+        cella.textContent = "";
+        button.textContent = "";
+
+        let vis_x = document.createElement("p");
+        vis_x.classList.add("visualizzazione_x");
+
+        let vis_o = document.createElement("p");
+        vis_o.classList.add("visualizzazione_o");
+
+        button.appendChild(vis_x);
+        button.appendChild(vis_o);
+
+        container.appendChild(cella);
+        cella.appendChild(button);
+    }
+    container.style.display = "grid";
+    container.style.gridTemplateColumns = `repeat(${Math.sqrt(lati)}, 100px)`;
+    container.style.gridTemplateRows = `repeat(${Math.sqrt(lati)}, 100px)`;
+    container.style.gap = "10px";
+    if(g==0)
+    {
+        let h1_sc=document.querySelectorAll(".h1_sc");
+        let sect2_1_sc=document.querySelectorAll(".sect2_1_sc")[0];
+        let sect2_2_sc=document.querySelectorAll(".sect2_2_sc")[0];
+        let sect2_3_sc=document.querySelectorAll(".sect2_3_sc")[0];
+        let cont_sect2_1_sc=0;
+        let cont_sect2_2_sc=0;
+        let cont_sect2_3_sc=0;
+
+        let n=0;
+        let cella=document.querySelectorAll(".cella");
+        let tasto=document.querySelectorAll(".bottone");
+        let vis_x=document.querySelectorAll(".visualizzazione_x");
+        let vis_o=document.querySelectorAll(".visualizzazione_o");
+        let cont=0;
+        let vittoria_x=false;
+        let vittoria_o=false;
+        let controllo_x=["","","",
+                        "","","",
+                        "","",""
+                        ];
+        let controllo_o=["","","",
+                        "","","",
+                        "","",""
+                        ];
+        
+        let reset= document.getElementById("reset");
+        let home= document.getElementById("home");
+        
+        //-------------------------------------------------------------------------------------
+        // funzione reset
+        function ResetPartita()
+        {
+            vittoria_x=false;
+            vittoria_o=false;
+            cont=0;
+            h1_sc[0].classList.remove("vittoria");
+            for(let j=0;j<9;j++)
+            {
+                vis_x[j].textContent="";
+                vis_o[j].textContent="";
+
+                controllo_x[j]="";
+                controllo_o[j]="";
+                tasto[j].disabled = false;
+
+                cella[j].style.backgroundColor = "";
+                tasto[j].style.backgroundColor = "";
+                vis_x[j].style.backgroundColor = "";
+                vis_o[j].style.backgroundColor = "";
+
+                vis_x[j].style.color = "";
+                vis_o[j].style.color = "";
+
+                tasto[j].style.border = "";
+
+                tasto[j].style.padding = "";
+                vis_x[j].style.padding = "";
+                vis_o[j].style.padding = "";
+            }
+
+            h1_sc[0].textContent = "Turno X";
+            h1_sc[0].style.color = "blue";
+        }
+
+        //------------------------------------------------------------
+
+        for(let i=0;i<tasto.length;i++)
+        {
+            tasto[i].addEventListener("click",function(){
+                if(vittoria_x==true)
+                {
+                    return;
+                }
+                if(vittoria_o==true)
+                {
+                    return;
+                }
+                if(cont %2===0)
+                {
+                    Inserimento_x(vis_x,tasto,controllo_x,i);
+        
+                    if(Verifica_vittoria(controllo_x, tasto, vis_x, cella, "x", 1) == 1) {
+                        cont_sect2_1_sc = Vittoria_x(cont_sect2_1_sc, h1_sc, sect2_1_sc);
+                        vittoria_x = true;
+                        n = 1;
+                    }
+                    else 
+                    {
+                        h1_sc[0].textContent = "Turno O";
+                        h1_sc[0].style.color = "red";
+                    }
+                }
+                else
+                {
+                    vis_o[i].textContent="o";
+                    vis_o[i].style.color="red";
+                    tasto[i].disabled = true;
+                    controllo_o[i] = "o"; 
+                    if(Verifica_vittoria(controllo_o, tasto, vis_o, cella, "o", 2) == 2) 
+                    {
+                        cont_sect2_3_sc = Vittoria_o(cont_sect2_3_sc, h1_sc, sect2_3_sc);
+                        vittoria_o = true; 
+                        n = 1;
+                    }
+                    else 
+                    {
+                        h1_sc[0].textContent = "Turno X";
+                        h1_sc[0].style.color = "blue";
+                    }
+                }
+                cont++;    
+                if(n==0)
+                {
+                    if(
+                        tasto[0].disabled && tasto[1].disabled && tasto[2].disabled &&
+                        tasto[3].disabled && tasto[4].disabled && tasto[5].disabled &&
+                        tasto[6].disabled && tasto[7].disabled && tasto[8].disabled
+                    )
+                    {
+                        h1_sc[0].textContent = "Pareggio";
+                        h1_sc[0].style.color = "black";
+                        cont_sect2_2_sc++; 
+                        sect2_2_sc.textContent = "Pareggi: " + cont_sect2_2_sc;
+                    }
+                }
+                else
+                {
+                    n=0;
+                }
+            });
+        }
+        reset.addEventListener("click",ResetPartita);
+
+        home.addEventListener("click",function(){
+            gioco_1.style.display = "none";
+            titolo_sc.style.display = "none";
+            menù.style.display = "block";
+        });
+    }
+}
+// ------------------------------------------------------------------------------------
+// menù
+
+let menù=document.getElementById("menù");
+let gioco_1=document.getElementById("gioco1");
+let gioco_2=document.getElementById("gioco2");
+let scelta_1=document.getElementById("scelta1");
+let scelta_2=document.getElementById("scelta2");
+let titolo_sc=document.getElementById("titolo_sc");
+let titolo_gc=document.getElementById("titolo_gc");
+
+let Numerocelle_sc=document.getElementById("Numerocelle_sc");
+let tre_x_tre=document.querySelectorAll(".tre_x_tre_sc")[0];
+let quattro_x_quattro_sc=document.querySelectorAll(".quattro_x_quattro_sc")[0];
+
+scelta_1.addEventListener("click",function(){
+    menù.style.display = "none";
+    Numerocelle_sc.style.display = "block";
 });
+    tre_x_tre.addEventListener("click",function(){
+        Numerocelle_sc.style.display = "none";
+        gioco_1.style.display = "block";
+        titolo_sc.style.display = "block";
+        generazione_celle(3,0);
+    });
+    quattro_x_quattro_sc.addEventListener("click",function(){
+        Numerocelle_sc.style.display = "none";
+        gioco_1.style.display = "block";
+        titolo_sc.style.display = "block";
+        generazione_celle(4,1);
+    });
+    
+    // ------------------------------------------------------------------------------------
+    // schermo condiviso
+
+    /*let h1_sc=document.querySelectorAll(".h1_sc");
+    let sect2_1_sc=document.querySelectorAll(".sect2_1_sc")[0];
+    let sect2_2_sc=document.querySelectorAll(".sect2_2_sc")[0];
+    let sect2_3_sc=document.querySelectorAll(".sect2_3_sc")[0];
+    let cont_sect2_1_sc=0;
+    let cont_sect2_2_sc=0;
+    let cont_sect2_3_sc=0;
+
+    let n=0;
+    let cella=document.querySelectorAll(".cella");
+    let tasto=document.querySelectorAll(".bottone");
+    let vis_x=document.querySelectorAll(".visualizzazione_x");
+    let vis_o=document.querySelectorAll(".visualizzazione_o");
+    let cont=0;
+    let vittoria_x=false;
+    let vittoria_o=false;
+    let controllo_x=["","","",
+                    "","","",
+                    "","",""
+                    ];
+    let controllo_o=["","","",
+                    "","","",
+                    "","",""
+                    ];
+    
+    let reset= document.getElementById("reset");
+    let home= document.getElementById("home");
+    
+    //-------------------------------------------------------------------------------------
+    // funzione reset
+    function ResetPartita()
+    {
+        vittoria_x=false;
+        vittoria_o=false;
+        cont=0;
+        h1_sc[0].classList.remove("vittoria");
+        for(let j=0;j<9;j++)
+        {
+            vis_x[j].textContent="";
+            vis_o[j].textContent="";
+
+            controllo_x[j]="";
+            controllo_o[j]="";
+            tasto[j].disabled = false;
+
+            cella[j].style.backgroundColor = "";
+            tasto[j].style.backgroundColor = "";
+            vis_x[j].style.backgroundColor = "";
+            vis_o[j].style.backgroundColor = "";
+
+            vis_x[j].style.color = "";
+            vis_o[j].style.color = "";
+
+            tasto[j].style.border = "";
+
+            tasto[j].style.padding = "";
+            vis_x[j].style.padding = "";
+            vis_o[j].style.padding = "";
+        }
+
+        h1_sc[0].textContent = "Turno X";
+        h1_sc[0].style.color = "blue";
+    }
+
+    //------------------------------------------------------------
+
+    for(let i=0;i<tasto.length;i++)
+    {
+        tasto[i].addEventListener("click",function(){
+            if(vittoria_x==true)
+            {
+                return;
+            }
+            if(vittoria_o==true)
+            {
+                return;
+            }
+            if(cont %2===0)
+            {
+                Inserimento_x(vis_x,tasto,controllo_x,i);
+    
+                if(Verifica_vittoria(controllo_x, tasto, vis_x, cella, "x", 1) == 1) {
+                    cont_sect2_1_sc = Vittoria_x(cont_sect2_1_sc, h1_sc, sect2_1_sc);
+                    vittoria_x = true;
+                    n = 1;
+                }
+                else 
+                {
+                    h1_sc[0].textContent = "Turno O";
+                    h1_sc[0].style.color = "red";
+                }
+            }
+            else
+            {
+                vis_o[i].textContent="o";
+                vis_o[i].style.color="red";
+                tasto[i].disabled = true;
+                controllo_o[i] = "o"; 
+                if(Verifica_vittoria(controllo_o, tasto, vis_o, cella, "o", 2) == 2) 
+                {
+                    cont_sect2_3_sc = Vittoria_o(cont_sect2_3_sc, h1_sc, sect2_3_sc);
+                    vittoria_o = true; 
+                    n = 1;
+                }
+                else 
+                {
+                    h1_sc[0].textContent = "Turno X";
+                    h1_sc[0].style.color = "blue";
+                }
+            }
+            cont++;    
+            if(n==0)
+            {
+                if(
+                    tasto[0].disabled && tasto[1].disabled && tasto[2].disabled &&
+                    tasto[3].disabled && tasto[4].disabled && tasto[5].disabled &&
+                    tasto[6].disabled && tasto[7].disabled && tasto[8].disabled
+                )
+                {
+                    h1_sc[0].textContent = "Pareggio";
+                    h1_sc[0].style.color = "black";
+                    cont_sect2_2_sc++; 
+                    sect2_2_sc.textContent = "Pareggi: " + cont_sect2_2_sc;
+                }
+            }
+            else
+            {
+                n=0;
+            }
+        });
+    }
+    reset.addEventListener("click",ResetPartita);
+
+    home.addEventListener("click",function(){
+        gioco_1.style.display = "none";
+        titolo_sc.style.display = "none";
+        menù.style.display = "block";
+    });
+});*/
 scelta_2.addEventListener("click",function(){
     menù.style.display = "none";
     gioco_2.style.display = "block";
