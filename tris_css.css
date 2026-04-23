@@ -274,6 +274,52 @@ p{
 /* -------------------------------------------------------------------------------------------*/
 /* gioco contro il computer*/
 
+.sect_num_celle_gc{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.Numerocelle_gc_t{
+    text-align: center;
+    font-size: 60px;
+    border-radius: 20px;
+    background-color: #f9f871;
+    width: 60%;           
+    margin: 20px auto;    
+    padding: 20px;
+}
+.tre_x_tre_gc{
+    height: 110px;
+    width: 180px;
+    border-radius: 20px;
+    background-color: #ffba38;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid transparent;
+    transition: transform 1s;
+    margin-top: 70px;
+    font-size: 30px;
+}
+.tre_x_tre_gc:hover{
+    transform: scale(1.05);
+}
+.quattro_x_quattro_gc{
+    height: 110px;
+    width: 180px;
+    border-radius: 20px;
+    background-color: #ffba38;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid transparent;
+    transition: transform 1s;
+    margin-top: 70px;
+    font-size: 30px;
+}
+.quattro_x_quattro_gc:hover{
+    transform: scale(1.05);
+}
+
+/*------------------------------------------------------------------------*/
 .h1_gc{
     text-align: center;
     font-size: 60px;
@@ -294,6 +340,12 @@ p{
     justify-content: center;
     gap: 20px;
     margin-top: 35px;
+}
+.celle_gc{
+    display: grid;
+    grid-template-columns:repeat(3,100px);
+    grid-template-rows: repeat(3,100px);
+    gap: 10px;
 }
 #reset_gc{
     height: 60px;
