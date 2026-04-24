@@ -392,6 +392,7 @@ function generazione_celle_sc(lati,g)
         menù.style.display = "block";
         h1_sc[0].classList.remove("vittoria");
         h1_sc[0].textContent="Turno X";
+        h1_sc[0].style.color = "#1a0ce8";
     });
 }
 // ------------------------------------------------------------------------------------
@@ -570,36 +571,40 @@ function generazione_celle_gc(lati,g)
                 sect2_2_gc.textContent = "Pareggi: " + cont_sect2_2_gc;
                 return;
             }
-
-            Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,controllo_x_cpu,controllocasuale,ncasuale,n,lati);
-
-            if(Verifica_vittoria(controllo_o_cpu, tasto_cpu, vis_o_cpu, cella, "o", 2,lati) == 2)
+            setTimeout(function() 
             {
-                cont_sect2_3_gc = Vittoria_o(cont_sect2_3_gc, h1_gc, sect2_3_gc);
-                vittoria_o_cpu = true; 
-                n_cpu++;
-                return;
-            }
-            h1_gc[0].textContent = "Turno X";
-            h1_gc[0].style.color = "blue";
-            let tutteCelleOccupate = true;
 
-            for (let t = 0; t < tasto_cpu.length; t++) 
-            {
-                if (tasto_cpu[t].disabled === false) 
+                Minimax(vis_o_cpu,tasto_cpu,controllo_o_cpu,controllo_x_cpu,controllocasuale,ncasuale,n,lati);
+
+
+                if(Verifica_vittoria(controllo_o_cpu, tasto_cpu, vis_o_cpu, cella, "o", 2,lati) == 2)
                 {
-                    tutteCelleOccupate = false;
-                    break;
+                    cont_sect2_3_gc = Vittoria_o(cont_sect2_3_gc, h1_gc, sect2_3_gc);
+                    vittoria_o_cpu = true; 
+                    n_cpu++;
+                    return;
                 }
-            }
-            if (tutteCelleOccupate === true && vittoria_x_cpu === false && vittoria_o_cpu === false) 
-            {
-                h1_gc[0].textContent = "Pareggio";
-                h1_gc[0].style.color = "black";
-                
-                cont_sect2_2_gc++; 
-                sect2_2_gc.textContent = "Pareggi: " + cont_sect2_2_gc;
-            }  
+                h1_gc[0].textContent = "Turno X";
+                h1_gc[0].style.color = "blue";
+                let tutteCelleOccupate = true;
+
+                for (let t = 0; t < tasto_cpu.length; t++) 
+                {
+                    if (tasto_cpu[t].disabled === false) 
+                    {
+                        tutteCelleOccupate = false;
+                        break;
+                    }
+                }
+                if (tutteCelleOccupate === true && vittoria_x_cpu === false && vittoria_o_cpu === false) 
+                {
+                    h1_gc[0].textContent = "Pareggio";
+                    h1_gc[0].style.color = "black";
+                    
+                    cont_sect2_2_gc++; 
+                    sect2_2_gc.textContent = "Pareggi: " + cont_sect2_2_gc;
+                }  
+            }, 500);
         });
     }
 
@@ -611,6 +616,7 @@ function generazione_celle_gc(lati,g)
         menù.style.display = "block";
         h1_gc[0].classList.remove("vittoria");
         h1_gc[0].textContent="Turno X";
+        h1_gc[0].style.color = "#1a0ce8";
     });
 }
 
