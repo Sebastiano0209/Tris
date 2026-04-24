@@ -98,7 +98,7 @@ h2{
 .sect_num_celle_sc{
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 240px;
 }
 .Numerocelle_sc_t{
     text-align: center;
@@ -109,37 +109,87 @@ h2{
     margin: 20px auto;    
     padding: 20px;
 }
+/*.tre_x_tre_sc{
+    height: 110px;
+    width: 180px;
+    border-radius: 50px; /* più pill */
+    /*border: 2px solid rgba(255,255,255,0.6); /* bordo morbido */
+    /*background: linear-gradient(145deg, #1a0ce8, #0d06a8); /* blu elegante */
+    /*color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    margin-top: 110px;
+    font-size: 30px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.tre_x_tre_sc:hover{
+    transform: scaleX(1.1);
+    box-shadow: 0px 0px 40px #1a0ce8;
+    border-color: rgba(255,255,255,0.9); /* bordo più luminoso */
+/*}
+/*.quattro_x_quattro_sc{
+    height: 110px;
+    width: 180px;
+    border-radius: 50px;
+    border: 2px solid rgba(255,255,255,0.6);
+    background: linear-gradient(145deg, red, red); /* rosa elegante */
+    /*color: white;
+    /*box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    margin-top: 110px;
+    font-size: 30px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.quattro_x_quattro_sc:hover{
+    transform: scaleX(1.1);
+    box-shadow: 0px 0px 40px #ff2f6f;
+    border-color: rgba(255,255,255,0.9);
+}*/
+
 .tre_x_tre_sc{
     height: 110px;
     width: 180px;
-    border-radius: 20px;
-    background-color: #ffba38;
+    border-radius: 30px;
+    border: 2px solid rgba(255,255,255,0.6);
+    background-color: #1a0ce8;
     color: white;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    border: 2px solid transparent;
-    transition: transform 1s;
-    margin-top: 70px;
+    margin-top: 110px;
     font-size: 30px;
+    transition: transform 1s, box-shadow 1s;
 }
 .tre_x_tre_sc:hover{
     transform: scale(1.05);
+    box-shadow: 0px 0px 50px #1a0ce8;
 }
 .quattro_x_quattro_sc{
     height: 110px;
     width: 180px;
-    border-radius: 20px;
-    background-color: #ffba38;
+    border-radius: 30px;
+    background-color: red;
     color: white;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    border: 2px solid transparent;
-    transition: transform 1s;
-    margin-top: 70px;
+    border: 2px solid rgba(255,255,255,0.6);
+    margin-top: 110px;
     font-size: 30px;
+    transition: transform 1s, box-shadow 1s;
 }
 .quattro_x_quattro_sc:hover{
     transform: scale(1.05);
+    box-shadow: 0px 0px 50px red;
 }
-
+/*.col1{
+    transition: border 0.1s, box-shadow 1s, transform 1s;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid transparent;
+}
+.col1:hover{
+    border: 2px solid red;
+    box-shadow: 0px 0px 50px red;
+    transform: scale(1.05);
+}*/
 /*------------------------------------------------------------------------*/
 .h1_sc{
     text-align: center;
