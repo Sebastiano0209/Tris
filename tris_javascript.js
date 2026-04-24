@@ -253,11 +253,18 @@ function generazione_celle_sc(lati,g)
         container.appendChild(cella);
         cella.appendChild(button);
     }
+    const gap_sc = 10;
+    // 40px = margine orizzontale totale lasciato ai lati della griglia;
+    // Math.min(100) mantiene le celle a 100px su schermi grandi, le riduce su quelli stretti
+    const cellSize_sc = Math.min(100, Math.floor((window.innerWidth - 40 - gap_sc * (lati - 1)) / lati));
     container.style.display = "grid";
-    container.style.gridTemplateColumns = `repeat(${Math.sqrt(totaleCelle)}, 100px)`;
-    container.style.gridTemplateRows = `repeat(${Math.sqrt(totaleCelle)}, 100px)`;
-    container.style.gap = "10px";
-    
+    container.style.gridTemplateColumns = `repeat(${lati}, ${cellSize_sc}px)`;
+    container.style.gridTemplateRows = `repeat(${lati}, ${cellSize_sc}px)`;
+    container.style.gap = `${gap_sc}px`;
+    // Aggiorna la variabile CSS usata da .visualizzazione_x/o per scalare il font
+    // proporzionalmente alla cella (rapporto originale: 160px font / 100px cella = 1.6)
+    container.style.setProperty('--cell-font-size', `${Math.round(cellSize_sc * 1.6)}px`);
+
     let h1_sc=document.querySelectorAll(".h1_sc");
     let sect2_1_sc=document.querySelectorAll(".sect2_1_sc")[0];
     let sect2_2_sc=document.querySelectorAll(".sect2_2_sc")[0];
@@ -459,10 +466,14 @@ function generazione_celle_gc(lati,g)
         container.appendChild(cella);
         cella.appendChild(button);
     }
+    const gap_gc = 10;
+    // Stessa logica di generazione_celle_sc: cella massimo 100px, ridotta su viewport strette
+    const cellSize_gc = Math.min(100, Math.floor((window.innerWidth - 40 - gap_gc * (lati - 1)) / lati));
     container.style.display = "grid";
-    container.style.gridTemplateColumns = `repeat(${Math.sqrt(totaleCelle)}, 100px)`;
-    container.style.gridTemplateRows = `repeat(${Math.sqrt(totaleCelle)}, 100px)`;
-    container.style.gap = "10px";
+    container.style.gridTemplateColumns = `repeat(${lati}, ${cellSize_gc}px)`;
+    container.style.gridTemplateRows = `repeat(${lati}, ${cellSize_gc}px)`;
+    container.style.gap = `${gap_gc}px`;
+    container.style.setProperty('--cell-font-size', `${Math.round(cellSize_gc * 1.6)}px`);
 
     // ------------------------------------------------------------------------------------
     // gioco contro il computer
