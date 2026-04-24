@@ -103,48 +103,16 @@ h2{
 .Numerocelle_sc_t{
     text-align: center;
     font-size: 60px;
-    border-radius: 20px;
-    background-color: #f9f871;
-    width: 60%;           
-    margin: 20px auto;    
-    padding: 20px;
+    font-weight: 900;
+    color: #1a1a1a;
+    background: #ffffffee;
+    border-radius: 25px;
+    padding: 22px;
+    width: 65%;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
 }
-/*.tre_x_tre_sc{
-    height: 110px;
-    width: 180px;
-    border-radius: 50px; /* più pill */
-    /*border: 2px solid rgba(255,255,255,0.6); /* bordo morbido */
-    /*background: linear-gradient(145deg, #1a0ce8, #0d06a8); /* blu elegante */
-    /*color: white;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    margin-top: 110px;
-    font-size: 30px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-}
-
-.tre_x_tre_sc:hover{
-    transform: scaleX(1.1);
-    box-shadow: 0px 0px 40px #1a0ce8;
-    border-color: rgba(255,255,255,0.9); /* bordo più luminoso */
-/*}
-/*.quattro_x_quattro_sc{
-    height: 110px;
-    width: 180px;
-    border-radius: 50px;
-    border: 2px solid rgba(255,255,255,0.6);
-    background: linear-gradient(145deg, red, red); /* rosa elegante */
-    /*color: white;
-    /*box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    margin-top: 110px;
-    font-size: 30px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-}
-
-.quattro_x_quattro_sc:hover{
-    transform: scaleX(1.1);
-    box-shadow: 0px 0px 40px #ff2f6f;
-    border-color: rgba(255,255,255,0.9);
-}*/
 .contenuto_3x3{
     display: flex;
     flex-direction: column;
@@ -207,18 +175,7 @@ h2{
     transform: scale(1.05);
     box-shadow: 0px 0px 50px red;
 }
-/*.col1{
-    transition: border 0.1s, box-shadow 1s, transform 1s;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    border: 2px solid transparent;
-}
-.col1:hover{
-    border: 2px solid red;
-    box-shadow: 0px 0px 50px red;
-    transform: scale(1.05);
-}*/
+
 /*------------------------------------------------------------------------*/
 .h1_sc{
     text-align: center;
@@ -323,27 +280,31 @@ p{
     height: 60px;
     width: 130px;
     border-radius: 20px;
-    background-color: #ffba38;
-    color: white;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    border: 2px solid transparent;
-    transition: transform 1s;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    background: linear-gradient(90deg, #1a0ce8 0%, #3a4cff 100%);
+    box-shadow: 0 0 20px #1a0ce8;
+    transition: transform 1s ease, box-shadow 1s ease;
 }
 #reset:hover{
     transform: scale(1.05);
+    box-shadow: 0 0 30px #1a0ce8;
 }
 #home{
     height: 60px;
     width: 130px;
     border-radius: 20px;
-    background-color: black;
-    color: white;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    border: 2px solid transparent;
-    transition: transform 1s;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    background: linear-gradient(90deg, #ff2f6f 0%, #ff6b9b 100%);
+    box-shadow: 0 0 20px #ff2f6f;
+    transition: transform 1s ease, box-shadow 1s ease;
 }
 #home:hover{
     transform: scale(1.05);
+    box-shadow: 0 0 30px #ff2f6f;
 }
 .bottone {
     padding: 0;
@@ -361,33 +322,20 @@ p{
 .Numerocelle_gc_t{
     text-align: center;
     font-size: 60px;
-    border-radius: 20px;
-    background-color: #f9f871;
-    width: 60%;           
-    margin: 20px auto;    
-    padding: 20px;
+    font-weight: 900;
+    color: #1a1a1a;
+    background: #ffffffee;
+    border-radius: 25px;
+    padding: 22px;
+    width: 65%;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
 }
-/*.tre_x_tre_sc{
-    height: 130px;
-    width: 210px;
-    border-radius: 30px;
-    border: 2px solid rgba(255,255,255,0.6);
-    background-color: #1a0ce8;
-    color: white;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    margin-top: 110px;
-    font-size: 30px;
-    transition: transform 1s, box-shadow 1s;
-}
-.tre_x_tre_sc:hover{
-    transform: scale(1.05);
-    box-shadow: 0px 0px 50px #1a0ce8;
-}
-*/
 .tre_x_tre_gc{
     display: flex;
-    height: 130px;
-    width: 210px;
+    height: 230px;
+    width: 250px;
     border-radius: 30px;
     border: 2px solid rgba(255,255,255,0.6);
     background-color: #1a0ce8;
@@ -402,8 +350,8 @@ p{
     box-shadow: 0px 0px 50px #1a0ce8;
 }
 .quattro_x_quattro_gc{
-    height: 130px;
-    width: 210px;
+    height: 230px;
+    width: 250px;
     border-radius: 30px;
     border: 2px solid rgba(255,255,255,0.6);
     background-color: red;
@@ -450,25 +398,106 @@ p{
     height: 60px;
     width: 130px;
     border-radius: 20px;
-    background-color: #ffba38;
-    color: white;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    border: 2px solid transparent;
-    transition: transform 1s;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    background: linear-gradient(90deg, #1a0ce8 0%, #3a4cff 100%);
+    box-shadow: 0 0 20px #1a0ce8;
+    transition: transform 1s ease, box-shadow 1s ease;
 }
 #reset_gc:hover{
     transform: scale(1.05);
+    box-shadow: 0 0 30px #1a0ce8;
 }
 #home_gc{
     height: 60px;
     width: 130px;
     border-radius: 20px;
-    background-color: black;
-    color: white;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    border: 2px solid transparent;
-    transition: transform 1s;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    background: linear-gradient(90deg, #ff2f6f 0%, #ff6b9b 100%);
+    box-shadow: 0 0 20px #ff2f6f;
+    transition: transform 1s ease, box-shadow 1s ease;
 }
 #home_gc:hover{
     transform: scale(1.05);
+    box-shadow: 0 0 30px #ff2f6f;
+}
+/*--------------------------------------------------------------------------*/
+
+.Numerocelle_sc_t::before,
+.Numerocelle_gc_t::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 6px solid #1a0ce8;
+    border-left: 6px solid #1a0ce8;
+    box-shadow: 
+        -5px 0 20px #1a0ce8,
+        0 -5px 20px #1a0ce8;
+    border-radius: 25px;
+    pointer-events: none;
+}
+
+.Numerocelle_sc_t::after,
+.Numerocelle_gc_t::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 6px solid #ff2f6f;
+    border-right: 6px solid #ff2f6f;
+    box-shadow: 
+        5px 0 20px #ff2f6f,
+        0 5px 20px #ff2f6f;
+    border-radius: 25px;
+    pointer-events: none;
+}
+.h1_sc, .h1_gc {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 900;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    border-radius: 25px;
+    padding: 22px;
+    width: 65%;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+.h1_sc::before, .h1_gc::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 6px solid #1a0ce8;
+    border-left: 6px solid #1a0ce8;
+    box-shadow: -5px 0 20px #1a0ce8, 0 -5px 20px #1a0ce8;
+    border-radius: 25px;
+    pointer-events: none;
+}
+
+.h1_sc::after, .h1_gc::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 6px solid #ff2f6f;
+    border-right: 6px solid #ff2f6f;
+    box-shadow: 5px 0 20px #ff2f6f, 0 5px 20px #ff2f6f;
+    border-radius: 25px;
+    pointer-events: none;
 }

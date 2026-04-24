@@ -5,8 +5,8 @@ function ApplicaFiltro_Verifica_vittoria(tasto, vis_x_o, ultimoIndice, cella, pa
     {
         let idx = ultimoIndice - (k * passo);
 
-        tasto[idx].style.backgroundColor = "#ffba38";
-        cella[idx].style.backgroundColor = "#ffba38";
+        tasto[idx].style.backgroundColor = "#7CFF5B";
+        cella[idx].style.backgroundColor = "#7CFF5B";
         tasto[idx].style.border = "0";
         vis_x_o[idx].style.color = "white";
     }
