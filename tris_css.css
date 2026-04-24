@@ -145,10 +145,24 @@ h2{
     box-shadow: 0px 0px 40px #ff2f6f;
     border-color: rgba(255,255,255,0.9);
 }*/
-
+.contenuto_3x3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tre_x_tre_sc_img{
+    height: 130px;
+    width: 160px;
+    padding-top: 60px;
+}
+.tre_x_tre_sc_p{
+    font-size: 35px;
+    color: white;
+    padding-bottom: 20px;
+}
 .tre_x_tre_sc{
-    height: 110px;
-    width: 180px;
+    height: 230px;
+    width: 250px;
     border-radius: 30px;
     border: 2px solid rgba(255,255,255,0.6);
     background-color: #1a0ce8;
@@ -162,11 +176,26 @@ h2{
     transform: scale(1.05);
     box-shadow: 0px 0px 50px #1a0ce8;
 }
+.contenuto_4x4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.quattro_x_quattro_sc_img{
+    height: 130px;
+    width: 160px;
+    padding-top: 60px;
+}
+.quattro_x_quattro_sc_p{
+    font-size: 35px;
+    color: white;
+    padding-bottom: 20px;
+}
 .quattro_x_quattro_sc{
-    height: 110px;
-    width: 180px;
+    height: 230px;
+    width: 250px;
     border-radius: 30px;
-    background-color: black;
+    background-color: red;
     color: white;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     border: 2px solid rgba(255,255,255,0.6);
@@ -327,7 +356,7 @@ p{
 .sect_num_celle_gc{
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 240px;
 }
 .Numerocelle_gc_t{
     text-align: center;
@@ -338,35 +367,55 @@ p{
     margin: 20px auto;    
     padding: 20px;
 }
-.tre_x_tre_gc{
-    height: 110px;
-    width: 180px;
-    border-radius: 20px;
-    background-color: #ffba38;
+/*.tre_x_tre_sc{
+    height: 130px;
+    width: 210px;
+    border-radius: 30px;
+    border: 2px solid rgba(255,255,255,0.6);
+    background-color: #1a0ce8;
     color: white;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    border: 2px solid transparent;
-    transition: transform 1s;
-    margin-top: 70px;
+    margin-top: 110px;
     font-size: 30px;
+    transition: transform 1s, box-shadow 1s;
+}
+.tre_x_tre_sc:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 50px #1a0ce8;
+}
+*/
+.tre_x_tre_gc{
+    display: flex;
+    height: 130px;
+    width: 210px;
+    border-radius: 30px;
+    border: 2px solid rgba(255,255,255,0.6);
+    background-color: #1a0ce8;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    margin-top: 110px;
+    font-size: 30px;
+    transition: transform 1s, box-shadow 1s;
 }
 .tre_x_tre_gc:hover{
     transform: scale(1.05);
+    box-shadow: 0px 0px 50px #1a0ce8;
 }
 .quattro_x_quattro_gc{
-    height: 110px;
-    width: 180px;
-    border-radius: 20px;
-    background-color: #ffba38;
+    height: 130px;
+    width: 210px;
+    border-radius: 30px;
+    border: 2px solid rgba(255,255,255,0.6);
+    background-color: red;
     color: white;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    border: 2px solid transparent;
-    transition: transform 1s;
-    margin-top: 70px;
+    margin-top: 110px;
     font-size: 30px;
+    transition: transform 1s, box-shadow 1s;
 }
 .quattro_x_quattro_gc:hover{
     transform: scale(1.05);
+    box-shadow: 0px 0px 50px red;
 }
 
 /*------------------------------------------------------------------------*/
