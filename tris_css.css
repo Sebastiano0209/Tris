@@ -2,7 +2,7 @@
 
 body {
     min-height: 100vh;
-    background-image: url("im_tris.png");
+    background-image: url("asset/im_tris.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
